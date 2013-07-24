@@ -1,15 +1,16 @@
 DemoApp::Application.routes.draw do
 
-  get "users/new"
 	root 'pages#home'
+  
+  resources :microposts
+  resources :users
+
+  match "signup", :to => 'users#new', :via => 'get'
 	
   match '/home', :to => 'pages#home', :via => 'get'
   match '/contact', :to => 'pages#contact', :via => 'get'
   match '/about', :to => 'pages#about', :via => 'get'
   match '/help', :to => 'pages#help', :via => 'get'
-  
-  resources :microposts
-  resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
