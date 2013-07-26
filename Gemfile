@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'twitter-bootstrap-rails'
 gem 'therubyracer'
 gem 'less-rails'
+gem 'blueprint-rails', '~> 0.2.0'
 
 #encrypt password
 gem 'bootstrap-sass', '2.3.2.0'

@@ -4,8 +4,12 @@ DemoApp::Application.routes.draw do
   
   resources :microposts
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
   match "signup", :to => 'users#new', :via => 'get'
+  
+  match 'signin', to: 'sessions#new', via: 'get'
+  match 'signout', to: 'sessions#destroy', via: 'delete'
 	
   match '/home', :to => 'pages#home', :via => 'get'
   match '/contact', :to => 'pages#contact', :via => 'get'
